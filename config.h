@@ -69,10 +69,6 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 /* function     format      argument */
-#if defined(__ASUS_AURA__)
-    {get_gpu_mode, "GPU: %s  ", NULL},
-    {get_fan_mode, " FAN: %s  ", NULL},
-#endif
     {keymap, "   %s  ", NULL},
 
 #if defined(__linux__)
@@ -83,7 +79,7 @@ static const struct arg args[] = {
     {volume_perc, "%3s% | ", NULL},
 #endif
 
-    {wifi_essid, "  %s  ", NULL},
+    {wifi_essid, "  %s  ", "wlan0"},
 #if defined(__linux__)
     {battery_state, "%s ", "BAT0"},
     {battery_perc, "%3s%  ", "BAT0"},
